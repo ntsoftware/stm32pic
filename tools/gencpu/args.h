@@ -3,6 +3,8 @@
 enum cmd {
     CMD_LUT,
     CMD_DEC,
+    CMD_SWAP,
+    CMD_BIT,
 };
 
 struct args {

@@ -19,7 +19,19 @@ void exit_with_error(int status, const char* msg, ...)
 
 static void print_usage(const char* name)
 {
-    printf("Usage: %s [OPTIONS] {lut|dec} FILE\n", name);
+    printf("Usage: %s [OPTIONS] CMD FILE\n", name);
+    printf("Generate look-up tables for cpu simulation\n");
+    printf("\n");
+    printf("  FILE      Instruction set\n");
+    printf("\n");
+    printf("Commands:\n");
+    printf("  lut       Generate table of instructions\n");
+    printf("  dec       Generate table for opcode decoding\n");
+    printf("  swap      Generate table for swapf instruction\n");
+    printf("  bit       Generate table for bit-oriented operations\n");
+    printf("\n");
+    printf("Options:\n");
+    printf("  -h, --help    Print this help text\n");
     exit(0);
 }
 
@@ -38,6 +50,10 @@ static enum cmd parse_cmd(const char* s)
         return CMD_LUT;
     if (strcmp(s, "dec") == 0)
         return CMD_DEC;
+    if (strcmp(s, "swap") == 0)
+        return CMD_SWAP;
+    if (strcmp(s, "bit") == 0)
+        return CMD_BIT;
     exit_with_error(1, "Unknown command \"%s\"", s);
 }
 
