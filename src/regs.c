@@ -149,22 +149,6 @@ void wr(uint8_t reg, uint8_t value)
         regs[reg - NUM_SFR] = value;
 }
 
-void clr_bits(uint8_t reg, uint8_t bits)
-{
-    /* operation not implemented for sfr */
-    if (reg < NUM_SFR)
-        return;
-    regs[reg - NUM_SFR] &= ~bits;
-}
-
-void set_bits(uint8_t reg, uint8_t bits)
-{
-    /* operation not implemented for sfr */
-    if (reg < NUM_SFR)
-        return;
-    regs[reg - NUM_SFR] |= bits;
-}
-
 void set_tris(uint8_t value)
 {
     sfr.tris = value & 0x3f;

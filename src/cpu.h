@@ -11,3 +11,4 @@ void init_cpu(void);
 void step(void);
 uint16_t get_pc(void);
 uint8_t get_status(void);
+unsigned get_cycles(void);

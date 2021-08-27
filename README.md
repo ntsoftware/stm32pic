@@ -1,5 +1,12 @@
 # Microchip PIC simulator for STM32
 
+## TODO
+
+Processor instructions:
+
+- CLRWDT
+- SLEEP
+
 
 ## gputils
 
