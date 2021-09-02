@@ -55,6 +55,7 @@ static enum cmd parse_cmd(const char* s)
     if (strcmp(s, "bit") == 0)
         return CMD_BIT;
     exit_with_error(1, "Unknown command \"%s\"", s);
+    return 0;
 }
 
 static void set_default_args(void)
