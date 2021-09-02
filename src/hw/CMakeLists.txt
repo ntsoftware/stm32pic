@@ -1,0 +1,1 @@
+target_sources(sim PRIVATE "gpio.c" "gpio.h" "option.c" "option.h" "tmr0.c" "tmr0.h" "wdt.c" "wdt.h")
